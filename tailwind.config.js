@@ -7,7 +7,13 @@ module.exports = {
   ],
   theme: {
     extend: {
-      colors: {},
+      colors: {
+        primaryGreen: "#1C8F54",
+        primaryRed: "#A52227",
+        primaryBage: "#EEE6DC",
+        primaryYallow: "#F3B850",
+        darkGreen: "#014722",
+      },
     },
   },
   plugins: [],

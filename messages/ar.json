@@ -2,5 +2,12 @@
   "home": {
     "title": "أهلاً بك",
     "description": "هذه هي الصفحة الرئيسية"
+  },
+  "navbar": {
+    "menu": "القائمه",
+    "main": "الرئيسية",
+    "story": "قصتنا",
+    "OurProducts": "منتجاتنا",
+    "ContactUs": "تواصل معنا"
   }
 }
