@@ -26,5 +26,9 @@
     "products": "Our Products",
     "contact": "Contact Us",
     "rightsReserved": "All rights reserved."
+  },
+  "story": {
+    "storyHero1": "It all started\n with a simple\n question that\n stayed with us:",
+    "storyHero2": "How can food\n stay true to its\n real taste? "
   }
 }

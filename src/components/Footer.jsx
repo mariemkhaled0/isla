@@ -10,9 +10,9 @@ export default function Footer() {
   return (
     <footer className="bg-primaryRed text-white p-10 relative text-lg">
       <div className="w-full">
-        <div className=" max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3  gap-6  ">
+        <div className=" lg:max-w-5xl mx-auto grid w-full grid-cols-3  gap-6 text-[10px] lg:text-base md:text-base ">
           {/* Contact Info */}
-          <div className="space-y-2 flex flex-col gap-4">
+          <div className="space-y-2 lg:flex  md:flex flex-col gap-4 hidden ">
             <div>
               {" "}
               <p className="font-bold">{t("addressLine1")}</p>
@@ -51,7 +51,7 @@ export default function Footer() {
         <ArrowIcon />
       </div>
       {/* Copyright */}
-      <div className="mt-10 text-sm text-gray-200 text-end me-40 ">
+      <div className="mt-10 text-sm text-gray-200 lg:text-end lg:me-40 text-center ">
         © 2019 {t("rightsReserved")}
       </div>
     </footer>

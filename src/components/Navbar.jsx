@@ -6,6 +6,7 @@ import banner from "@/src/images/banner.png";
 import { useTranslations } from "next-intl";
 import { useLocale } from "next-intl";
 import { FacebookIcon, InstagramIcon, LinkenIcon } from "../images/icons";
+import Link from "next/link";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -38,7 +39,9 @@ export default function Navbar() {
                 }`}
               >
                 <h2>{t("home")}</h2>
-                <h2>{t("story")}</h2>
+                <Link href="/story">
+                  <h2>{t("story")}</h2>
+                </Link>
                 <h2>{t("OurProducts")}</h2>
                 <h2>{t("ContactUs")}</h2>
                 <div className="flex">

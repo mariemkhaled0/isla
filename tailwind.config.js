@@ -19,6 +19,11 @@ module.exports = {
         longreach: ["var(--font-longreach)"],
         wingx: ["var(--font-wingx)"],
       },
+      screens: {
+        xxs: { min: "320px", max: "350px" },
+        xs: { min: "375px", max: "390px" },
+        xsm: { min: "310px", max: "390px" },
+      },
     },
   },
   plugins: [],

@@ -14,9 +14,22 @@
   }
 }
 
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 10s linear infinite;
+}
+
 body {
   font-family: Arial, Helvetica, sans-serif;
-  @apply text-white;
+  @apply text-white font-alexandria;
 }
 
 @layer utilities {
