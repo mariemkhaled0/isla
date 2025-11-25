@@ -10,14 +10,19 @@ export default function Page() {
 
   return (
     <div className="-mt-4 bg-primaryRed pt-14">
-      <Marquee gradient={false} speed={90}>
-        {Array.from({ length: repeatCount }).map((_, idx) => (
-          <span key={idx} className="mx-5  text-xl flex  gap-4 font-alexandria">
-            ISLA FOODS
-            <StarIcon className="mt-1.5" />
-          </span>
-        ))}
-      </Marquee>
+      <div dir="ltr">
+        <Marquee gradient={false} speed={90}>
+          {Array.from({ length: repeatCount }).map((_, idx) => (
+            <span
+              key={idx}
+              className="mx-5  text-xl flex  gap-4 font-alexandria"
+            >
+              ISLA FOODS
+              <StarIcon className="mt-1.5" />
+            </span>
+          ))}
+        </Marquee>
+      </div>
       <StoryHero />
     </div>
   );

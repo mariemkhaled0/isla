@@ -38,12 +38,18 @@ export default function Navbar() {
                   locale === "ar" ? "left-0" : "right-0"
                 }`}
               >
-                <h2>{t("home")}</h2>
+                <Link href="/">
+                  <h2>{t("home")}</h2>
+                </Link>
                 <Link href="/story">
                   <h2>{t("story")}</h2>
                 </Link>
-                <h2>{t("OurProducts")}</h2>
-                <h2>{t("ContactUs")}</h2>
+                <Link href="/ourproducts">
+                  <h2>{t("OurProducts")}</h2>
+                </Link>
+                <Link href="/contacts">
+                  <h2>{t("ContactUs")}</h2>
+                </Link>
                 <div className="flex">
                   <LinkenIcon />
                   <FacebookIcon />
