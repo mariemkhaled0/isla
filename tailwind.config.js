@@ -14,6 +14,11 @@ module.exports = {
         primaryYallow: "#F3B850",
         darkGreen: "#014722",
       },
+      fontFamily: {
+        alexandria: ["var(--font-alexandria)"],
+        longreach: ["var(--font-longreach)"],
+        wingx: ["var(--font-wingx)"],
+      },
     },
   },
   plugins: [],

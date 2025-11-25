@@ -9,5 +9,23 @@
     "story": "قصتنا",
     "OurProducts": "منتجاتنا",
     "ContactUs": "تواصل معنا"
+  },
+  "hero": {
+    "heroText": "من قلب\nالطبيعة إلى\nدفء المائدة",
+    "herotitle": "منذ ٢٠١٩..",
+    "herostory": "قصتنا"
+  },
+
+  "footer": {
+    "addressLine1": "الإدارة",
+    "addressLine2": "التجمع الخامس",
+    "addressLine3": "لوتس 5، فيلا 20",
+    "phone1": "0109 9139991",
+    "phone2": "0111 2600025",
+    "home": "الصفحة الرئيسية",
+    "ourStory": "قصتنا",
+    "products": "منتجاتنا",
+    "contact": "تواصل معنا",
+    "rightsReserved": "جميع الحقوق محفوظة."
   }
 }

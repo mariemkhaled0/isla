@@ -5,9 +5,26 @@
   },
   "navbar": {
     "menu": "menu",
-    "main": "main",
-    "story": "story",
+    "home": "Home",
+    "story": "Story",
     "OurProducts": "Our Products",
     "ContactUs": "Contact Us"
+  },
+  "hero": {
+    "heroText": "From the\nheart of\nnature to\nthe warmth\nof the table",
+    "herotitle": "Since 2019...",
+    "herostory": "our story"
+  },
+  "footer": {
+    "addressLine1": "Administration",
+    "addressLine2": "Fifth Settlement",
+    "addressLine3": "Lotus 5, Villa 20",
+    "phone1": "0109 9139991",
+    "phone2": "0111 2600025",
+    "home": "Home Page",
+    "ourStory": "Our Story",
+    "products": "Our Products",
+    "contact": "Contact Us",
+    "rightsReserved": "All rights reserved."
   }
 }

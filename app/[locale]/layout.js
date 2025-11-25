@@ -5,18 +5,22 @@ import localFont from "next/font/local";
 import "../globals.css";
 import LanguageSwitcher from "@/src/components/LanguageSwitcher";
 import Navbar from "@/src/components/Navbar";
+import Footer from "@/src/components/Footer";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
+const alexandria = localFont({
+  src: "./fonts/Alexandria-VariableFont_wght.ttf",
+  variable: "--font-alexandria",
 });
 
+const longreach = localFont({
+  src: "./fonts/DK Longreach.otf",
+  variable: "--font-longreach",
+});
+
+const wingx = localFont({
+  src: "./fonts/Wingx.otf",
+  variable: "--font-wingx",
+});
 const locales = ["en", "ar"];
 const defaultLocale = "ar";
 
@@ -30,14 +34,14 @@ export default async function RootLayout({ children, params }) {
   return (
     <html lang={locale} dir={locale === "ar" ? "rtl" : "ltr"}>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${alexandria.variable} ${longreach.variable} ${wingx.variable}`}
       >
         <NextIntlClientProvider locale={locale} messages={messages}>
           <headers>
             <Navbar />
-            <LanguageSwitcher />
           </headers>
           {children}
+          <Footer />
         </NextIntlClientProvider>
       </body>
     </html>

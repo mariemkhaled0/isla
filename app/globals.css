@@ -16,10 +16,23 @@
 
 body {
   font-family: Arial, Helvetica, sans-serif;
+  @apply text-white;
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+.body-container {
+  @apply lg:px-12 md:px-10 px-[18px] -mt-4;
+}
+
+.text-m {
+  @apply lg:text-3xl md:text-2xl text-[10px] font-medium;
+}
+
+.m-title {
+  @apply lg:text-6xl text-center md:text-5xl text-xl font-medium;
 }
