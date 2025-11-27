@@ -49,3 +49,9 @@ body {
 .m-title {
   @apply lg:text-6xl text-center md:text-5xl text-xl font-medium;
 }
+.story-wave-bg {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1024 358'><path fill='%23EEE6DC' d='M-20.0064 296.197C15.2498 290.026 67.7722 284.134 130.473 290.297C212.368 298.35 243.148 320.225 311.427 338.648C425.644 369.471 523.05 357.77 649.169 342.625C750.107 330.505 782.666 315.023 871.427 318.778C935.773 321.506 988.468 332.937 1024.01 342.625V0C302.397 0.189001 -12.4077 0.172566 -20.0064 0C-20.03 0 -20.0378 0 -20.0536 0C-29.4222 0.460175 -26.4094 138.176 -20.0064 296.197Z'/></svg>");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+}

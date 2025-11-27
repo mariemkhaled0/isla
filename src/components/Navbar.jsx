@@ -22,7 +22,7 @@ export default function Navbar() {
     >
       <div className="w-full">
         <div className="flex justify-between w-full relative">
-          <Image src={logo} alt="logo" className="w-auto h-auto" />
+          <Image src={logo} alt="logo" className="w-[120px] h-auto" />
           <div className=" ">
             <div
               onClick={handleToggleMenu}
