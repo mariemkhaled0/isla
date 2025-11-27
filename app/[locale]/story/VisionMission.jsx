@@ -1,5 +1,5 @@
 import React from "react";
-import darkGreenGg from "@/src/images/darkGreenGg.png";
+import darkGreenGg from "@/src/images/darkbg.png";
 import { useLocale } from "next-intl";
 import { useTranslations } from "use-intl";
 
@@ -10,7 +10,7 @@ function VisionMission() {
   return (
     <section
       style={{ backgroundImage: `url(${darkGreenGg.src})` }}
-      className="bg-left-bottom  bg-cover  h-[720px] flex justify-center p-20 text-center relative z-20"
+      className="bg-right-bottom  bg-cover  lg:h-[720px] md:h-[400px] h-[720px] flex justify-center pt-14 px-20 text-center relative z-20"
     >
       <div className="flex flex-col md:flex-row lg:gap-48 gap-10">
         <div>

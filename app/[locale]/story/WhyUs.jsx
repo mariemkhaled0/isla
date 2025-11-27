@@ -4,8 +4,8 @@ import jam from "@/src/images/jam.png";
 
 function WhyUs() {
   return (
-    <section className="bg-primaryGreen h-[700px] -mt-36 z-10 relative">
-      <div className="pt-48 flex justify-center items-center">
+    <section className="bg-primaryGreen h-[700px] -mt-48 z-10 relative">
+      <div className="pt-60 flex justify-center items-center">
         <div className="flex relative  justify-center">
           <h3 className="lg:text-[250px] md:text-[170px] text-[150px] text-center font-longreach lg:leading-[210px] md:leading-[150px] leading-[150px]">
             WHY
