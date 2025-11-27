@@ -44,6 +44,7 @@ export default function Page() {
       </div>
       <VisionMission />
       <WhyUs />
+      <LastSection />
     </div>
   );
 }

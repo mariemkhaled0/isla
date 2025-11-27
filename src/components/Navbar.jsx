@@ -18,7 +18,7 @@ export default function Navbar() {
   return (
     <div
       className="w-full h-[150px] bg-cover bg-center flex items-center justify-center lg:px-10 md:px-10 px-4 relative z-40"
-      style={{ backgroundImage: `url(${banner.src})` }} // important for next/image import
+      style={{ backgroundImage: `url(${banner.src})` }}
     >
       <div className="w-full">
         <div className="flex justify-between w-full relative">
@@ -38,16 +38,16 @@ export default function Navbar() {
                   locale === "ar" ? "left-0" : "right-0"
                 }`}
               >
-                <Link href="/">
+                <Link href="/" onClick={handleToggleMenu}>
                   <h2>{t("home")}</h2>
                 </Link>
-                <Link href="/story">
+                <Link href="/story" onClick={handleToggleMenu}>
                   <h2>{t("story")}</h2>
                 </Link>
-                <Link href="/ourproducts">
+                <Link href="/ourproducts" onClick={handleToggleMenu}>
                   <h2>{t("OurProducts")}</h2>
                 </Link>
-                <Link href="/contacts">
+                <Link href="/contacts" onClick={handleToggleMenu}>
                   <h2>{t("ContactUs")}</h2>
                 </Link>
                 <div className="flex">

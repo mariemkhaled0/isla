@@ -8,7 +8,7 @@ export default function Footer() {
   const t = useTranslations("footer"); // تأكدي ان عندك ملف messages للـ Footer
 
   return (
-    <footer className="bg-primaryRed text-white p-10 relative text-lg">
+    <footer className="bg-primaryRed text-white p-10 relative text-lg pt-10">
       <div className="w-full">
         <div className=" lg:max-w-5xl mx-auto grid w-full grid-cols-3  gap-6 text-[10px] lg:text-base md:text-base ">
           {/* Contact Info */}
