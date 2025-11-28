@@ -2,11 +2,11 @@
 import Marquee from "react-fast-marquee";
 import { useTranslations } from "next-intl";
 import { StarIcon } from "@/src/images/icons";
-import StoryHero from "./StoryHero";
-import StorySection from "./StorySection";
-import VisionMission from "./VisionMission";
-import WhyUs from "./WhyUs";
-import LastSection from "./LastSection";
+import StoryHero from "../../../src/components/story/StoryHero";
+import StorySection from "../../../src/components/story/StorySection";
+import VisionMission from "../../../src/components/story/VisionMission";
+import WhyUs from "../../../src/components/story/WhyUs";
+import LastSection from "../../../src/components/story/LastSection";
 
 export default function Page() {
   const t = useTranslations("story");

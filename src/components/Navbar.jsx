@@ -22,13 +22,17 @@ export default function Navbar() {
     >
       <div className="w-full">
         <div className="flex justify-between w-full relative">
-          <Image src={logo} alt="logo" className="w-[120px] h-auto" />
+          <Image
+            src={logo}
+            alt="logo"
+            className="lg:w-[120px] md:w-[120px] w-[90px]  h-auto"
+          />
           <div className=" ">
             <div
               onClick={handleToggleMenu}
               className="lg:w-32 lg:h-10 w-20 h-8 cursor-pointer md:w-28 md:h-8 px-2.5 relative bg-primaryYallow rounded-3xl lg:shadow-[-6px_6px_0px_0px_rgba(60,44,19,1.00)] md:hadow-[-6px_6px_0px_0px_rgba(60,44,19,1.00)] shadow-[-4px_4px_0px_0px_rgba(60,44,19,1.00)] inline-flex justify-center items-center gap-2.5"
             >
-              <button className=" text-center  text-black text-xl font-bold font-alexandria leading-[50px] uppercase">
+              <button className=" text-center  text-black text-lg font-bold font-alexandria leading-[50px] uppercase">
                 {t("menu")}
               </button>
             </div>

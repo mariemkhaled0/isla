@@ -46,5 +46,17 @@
     "qualityIsntAClaim": "Quality isn’t a claim we make it’s the result of experience, precision, and relentless attention to detail.",
     "withEsla": "With Isla, every meal becomes a moment of trust, a connection, a taste that feels real.",
     "contactUs": "Contact us"
+  },
+  "products": {
+    "tomatoPaste": "TOMATO PASTE\n صلصــــــة طماطـــــم",
+    "tomatoDesc": "Our tomato paste is made from the finest fresh tomatoes, giving you the rich, natural flavor you need to prepare the most delicious dishes.It’s perfect for adding depth and a distinctive taste to your sauces, soups, and favorite meals.Quality starts here!",
+    "sauces": "sauces\n  صوصــات",
+    "saucesDesc": "Our sauce collection offers you variety and the perfect flavor for every meal.Each product is crafted with care to suit your taste and satisfy everyone in your family.Enjoy an innovative experience with sauces that add a unique touch to your everyday dishes!”",
+    "tomatoSause": "TOMATO SAUCE\n صـــــوص طماطـــــم",
+    "tomatoSauseDesc": "Our delicious tomato sauce is made from carefully selected ripe tomatoes, combined with a blend of natural spices to give you an irresistible flavor.Perfect for pasta, pizza, and casseroles, it adds a touch of creativity and richness to your table.Because great taste starts with the right ingredients!",
+    "spices": "SPICES \nتوابـــــــــل",
+    "spicesDesc": "Our premium spice collection is inspired by nature and carefully selected to add touches of flavor and authenticity to your dishes.Whether you’re looking for oriental spices, aromatic herbs, or special blends, you’ll find everything you need to prepare delicious meals that bring magic to your table. Because excellence begins with the spices!",
+    "jam": "JAM\n مربي",
+    "janDesc": "Our fruit jam is made from the finest fresh fruits to give you a rich, natural taste.Perfect for breakfast, sandwiches, or as a sweet addition to desserts.Enjoy a variety of flavors, from delicious strawberry to rich apricot because every day deserves a special start!"
   }
 }
