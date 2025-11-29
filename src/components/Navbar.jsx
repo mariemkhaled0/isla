@@ -7,6 +7,7 @@ import { useTranslations } from "next-intl";
 import { useLocale } from "next-intl";
 import { FacebookIcon, InstagramIcon, LinkenIcon } from "../images/icons";
 import Link from "next/link";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,6 +16,24 @@ export default function Navbar() {
   const handleToggleMenu = () => {
     setIsOpen((prev) => !prev);
   };
+  const router = useRouter();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+
+  const switchLanguage = (lang) => {
+    // Remove the current locale prefix from pathname
+    const segments = pathname.split("/"); // ["", "ar", "contacts"]
+    if (segments[1] === "ar" || segments[1] === "en") {
+      segments[1] = lang; // replace with new locale
+    } else {
+      segments.unshift("", lang); // if no locale, add it
+    }
+    const newPath =
+      segments.join("/") +
+      (searchParams.toString() ? `?${searchParams.toString()}` : "");
+    router.push(newPath);
+  };
+
   return (
     <div
       className="w-full h-[150px] bg-cover bg-center flex items-center justify-center lg:px-10 md:px-10 px-4 relative z-40"
@@ -38,7 +57,7 @@ export default function Navbar() {
             </div>
             {isOpen && (
               <div
-                className={`z-50 font-alexandria w-[200px] rounded-3xl bg-primaryYallow border-[3px] mt-2 p-4  font-bold text-primaryRed border-primaryRed flex flex-col gap-5 justify-center items-center absolute ${
+                className={`z-50 font-alexandria w-[200px] rounded-3xl bg-primaryYallow border-[3px] mt-2 p-5  font-bold text-primaryRed border-primaryRed flex flex-col gap-5 justify-center items-center absolute ${
                   locale === "ar" ? "left-0" : "right-0"
                 }`}
               >
@@ -58,6 +77,24 @@ export default function Navbar() {
                   <LinkenIcon />
                   <FacebookIcon />
                   <InstagramIcon />
+                </div>
+                <div className="flex gap-2 bg-black p-2 text-primaryYallow rounded-3xl text-[10px]">
+                  <span
+                    className={`cursor-pointer px-2 rounded-3xl ${
+                      locale === "ar" ? "bg-white text-black" : ""
+                    }`}
+                    onClick={() => switchLanguage("ar")}
+                  >
+                    العربيه
+                  </span>
+                  <span
+                    className={`cursor-pointer px-2 p rounded-3xl ${
+                      locale === "en" ? "bg-white text-black" : ""
+                    }`}
+                    onClick={() => switchLanguage("en")}
+                  >
+                    English
+                  </span>
                 </div>
               </div>
             )}
