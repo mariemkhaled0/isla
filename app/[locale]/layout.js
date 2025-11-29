@@ -1,5 +1,4 @@
 import { NextIntlClientProvider } from "next-intl";
-import { headers } from "next/headers";
 import { hasLocale } from "next-intl";
 import localFont from "next/font/local";
 import "../globals.css";
@@ -21,13 +20,15 @@ const wingx = localFont({
   src: "./fonts/Wingx.otf",
   variable: "--font-wingx",
 });
+
 const locales = ["en", "ar"];
 const defaultLocale = "ar";
 
 export default async function RootLayout({ children, params }) {
-  const locale = hasLocale(locales, params.locale)
-    ? params.locale
-    : defaultLocale;
+  // Await params if using Next.js 15+
+  const { locale: paramLocale } = await params;
+
+  const locale = hasLocale(locales, paramLocale) ? paramLocale : defaultLocale;
 
   const messages = (await import(`../../messages/${locale}.json`)).default;
 
@@ -37,9 +38,9 @@ export default async function RootLayout({ children, params }) {
         className={`${alexandria.variable} ${longreach.variable} ${wingx.variable}`}
       >
         <NextIntlClientProvider locale={locale} messages={messages}>
-          <headers>
+          <header>
             <Navbar />
-          </headers>
+          </header>
           {children}
           <Footer />
         </NextIntlClientProvider>

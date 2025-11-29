@@ -1,37 +1,41 @@
 "use client";
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import logo from "@/src/images/IslaLogo.png";
 import banner from "@/src/images/banner.png";
 import { useTranslations } from "next-intl";
 import { useLocale } from "next-intl";
 import { FacebookIcon, InstagramIcon, LinkenIcon } from "../images/icons";
 import Link from "next/link";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
+
+import LanguageSwitcher from "./LanguageSwitcher";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const menuRef = useRef(null);
   const t = useTranslations("navbar");
-  const locale = useLocale(); // 'en' أو 'ar'
+  const locale = useLocale();
+
   const handleToggleMenu = () => {
     setIsOpen((prev) => !prev);
   };
-  const router = useRouter();
-  const pathname = usePathname();
-  const searchParams = useSearchParams();
 
-  const switchLanguage = (lang) => {
-    const segments = pathname.split("/"); // ["", "ar", "contacts"]
-    if (segments[1] === "ar" || segments[1] === "en") {
-      segments[1] = lang; // replace current locale
-    } else {
-      segments.splice(1, 0, lang); // insert locale if missing
+  // Close menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setIsOpen(false);
+      }
+    };
+
+    if (isOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
     }
-    const newPath =
-      segments.join("/") +
-      (searchParams.toString() ? `?${searchParams.toString()}` : "");
-    router.push(newPath);
-  };
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isOpen]);
 
   return (
     <div
@@ -43,33 +47,36 @@ export default function Navbar() {
           <Image
             src={logo}
             alt="logo"
-            className="lg:w-[120px] md:w-[120px] w-[90px]  h-auto"
+            className="lg:w-[120px] md:w-[120px] w-[90px] h-auto"
           />
-          <div className=" ">
+          <div className="" ref={menuRef}>
             <div
               onClick={handleToggleMenu}
               className="lg:w-32 lg:h-10 w-20 h-8 cursor-pointer md:w-28 md:h-8 px-2.5 relative bg-primaryYallow rounded-3xl lg:shadow-[-6px_6px_0px_0px_rgba(60,44,19,1.00)] md:hadow-[-6px_6px_0px_0px_rgba(60,44,19,1.00)] shadow-[-4px_4px_0px_0px_rgba(60,44,19,1.00)] inline-flex justify-center items-center gap-2.5"
             >
-              <button className=" text-center  text-black text-lg font-bold font-alexandria leading-[50px] uppercase">
+              <button className="text-center text-black text-lg font-bold font-alexandria leading-[50px] uppercase">
                 {t("menu")}
               </button>
             </div>
             {isOpen && (
               <div
-                className={`z-50 font-alexandria w-[200px] rounded-3xl bg-primaryYallow border-[3px] mt-2 p-5  font-bold text-primaryRed border-primaryRed flex flex-col gap-5 justify-center items-center absolute ${
+                className={`z-50 font-alexandria w-[200px] rounded-3xl bg-primaryYallow border-[3px] mt-2 p-5 font-bold text-primaryRed border-primaryRed flex flex-col gap-5 justify-center items-center absolute ${
                   locale === "ar" ? "left-0" : "right-0"
                 }`}
               >
-                <Link href="/" onClick={handleToggleMenu}>
+                <Link href={`/${locale}/`} onClick={handleToggleMenu}>
                   <h2>{t("home")}</h2>
                 </Link>
-                <Link href="/story" onClick={handleToggleMenu}>
+                <Link href={`/${locale}/story`} onClick={handleToggleMenu}>
                   <h2>{t("story")}</h2>
                 </Link>
-                <Link href="/ourproducts" onClick={handleToggleMenu}>
+                <Link
+                  href={`/${locale}/ourproducts`}
+                  onClick={handleToggleMenu}
+                >
                   <h2>{t("OurProducts")}</h2>
                 </Link>
-                <Link href="/contacts" onClick={handleToggleMenu}>
+                <Link href={`/${locale}/contacts`} onClick={handleToggleMenu}>
                   <h2>{t("ContactUs")}</h2>
                 </Link>
                 <div className="flex">
@@ -77,24 +84,7 @@ export default function Navbar() {
                   <FacebookIcon />
                   <InstagramIcon />
                 </div>
-                <div className="flex gap-2 bg-black p-2 text-primaryYallow rounded-3xl text-[10px]">
-                  <span
-                    className={`cursor-pointer px-2 rounded-3xl ${
-                      locale === "ar" ? "bg-white text-black" : ""
-                    }`}
-                    onClick={() => switchLanguage("ar")}
-                  >
-                    العربيه
-                  </span>
-                  <span
-                    className={`cursor-pointer px-2 p rounded-3xl ${
-                      locale === "en" ? "bg-white text-black" : ""
-                    }`}
-                    onClick={() => switchLanguage("en")}
-                  >
-                    English
-                  </span>
-                </div>
+                <LanguageSwitcher />
               </div>
             )}
           </div>

@@ -1,42 +1,43 @@
 "use client";
-
-import { usePathname, useRouter } from "next/navigation";
-
-const locales = ["ar", "en"];
-
-const localeDir = {
-  ar: "rtl",
-  en: "ltr",
-};
+import { useRouter, usePathname, useSearchParams } from "next/navigation";
+import { useLocale } from "next-intl";
 
 export default function LanguageSwitcher() {
   const router = useRouter();
   const pathname = usePathname();
-  const currentLocale = pathname.split("/")[1];
+  const searchParams = useSearchParams();
+  const currentLocale = useLocale(); // Use next-intl's locale hook
 
-  const switchLang = (locale) => {
-    // Change page
-    const newPath = "/" + locale + pathname.replace(`/${currentLocale}`, "");
+  const switchLanguage = (lang) => {
+    // Remove the current locale from pathname
+    const pathWithoutLocale = pathname.replace(/^\/(en|ar)/, "");
+
+    // Build new path with selected language
+    const newPath = `/${lang}${pathWithoutLocale}${
+      searchParams.toString() ? `?${searchParams.toString()}` : ""
+    }`;
+
     router.push(newPath);
-
-    // Fix direction (very important!)
-    document.documentElement.setAttribute("dir", localeDir[locale]);
-    document.documentElement.setAttribute("lang", locale);
   };
 
   return (
-    <div className="flex gap-6 ">
-      {locales.map((loc) => (
-        <button
-          key={loc}
-          onClick={() => switchLang(loc)}
-          className={`px-3 py-1 rounded ${
-            loc === currentLocale ? "bg-blue-500 text-white" : "bg-gray-200"
-          }`}
-        >
-          {loc.toUpperCase()}
-        </button>
-      ))}
+    <div className="flex gap-2 bg-black p-2 text-primaryYallow rounded-3xl text-[10px]">
+      <span
+        className={`cursor-pointer px-2 rounded-3xl ${
+          currentLocale === "ar" ? "bg-primaryYallow text-black" : ""
+        }`}
+        onClick={() => switchLanguage("ar")}
+      >
+        العربيه
+      </span>
+      <span
+        className={`cursor-pointer px-2 rounded-3xl ${
+          currentLocale === "en" ? "bg-white text-black" : ""
+        }`}
+        onClick={() => switchLanguage("en")}
+      >
+        English
+      </span>
     </div>
   );
 }
