@@ -21,12 +21,11 @@ export default function Navbar() {
   const searchParams = useSearchParams();
 
   const switchLanguage = (lang) => {
-    // Remove the current locale prefix from pathname
     const segments = pathname.split("/"); // ["", "ar", "contacts"]
     if (segments[1] === "ar" || segments[1] === "en") {
-      segments[1] = lang; // replace with new locale
+      segments[1] = lang; // replace current locale
     } else {
-      segments.unshift("", lang); // if no locale, add it
+      segments.splice(1, 0, lang); // insert locale if missing
     }
     const newPath =
       segments.join("/") +
