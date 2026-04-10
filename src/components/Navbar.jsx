@@ -44,11 +44,13 @@ export default function Navbar() {
     >
       <div className="w-full">
         <div className="flex justify-between w-full relative">
-          <Image
-            src={logo}
-            alt="logo"
-            className="lg:w-[120px] md:w-[120px] w-[90px] h-auto"
-          />
+          <Link href={`/${locale}/`}>
+            <Image
+              src={logo}
+              alt="logo"
+              className="lg:w-[120px] md:w-[120px] w-[90px] h-auto"
+            />
+          </Link>
           <div className="" ref={menuRef}>
             <div
               onClick={handleToggleMenu}
