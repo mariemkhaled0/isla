@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import React, { useState, useEffect, useRef } from "react";
-import logo from "@/src/images/IslaLogo.png";
+import logo from "/public/IslaLogo.png";
 import banner from "@/src/images/banner.png";
 import { useTranslations } from "next-intl";
 import { useLocale } from "next-intl";

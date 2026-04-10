@@ -3,7 +3,7 @@ import { useLocale } from "next-intl";
 import homeProducts from "@/src/images/homeProducts.png";
 import Image from "next/image";
 import Link from "next/link";
-import vector from "@/src/images/vector.png";
+import vector from "/public/vector.png";
 import vectorLeft from "@/src/images/vectorLeft.png";
 export default function HeroText() {
   const t = useTranslations("hero");
@@ -31,13 +31,13 @@ export default function HeroText() {
                   dangerouslySetInnerHTML={{
                     __html: line.replace(
                       "الطبيعة",
-                      `<span style="color: #014722;">الطبيعة</span>`
+                      `<span style="color: #014722;">الطبيعة</span>`,
                     ),
                   }}
                 />
               ) : (
                 <div key={idx}>{line}</div>
-              )
+              ),
             )}
           </div>
         </div>
